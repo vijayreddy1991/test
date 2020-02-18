@@ -5,4 +5,4 @@ resources:
       path: vijayreddy1991/test
       branches:
         include: master
-      gitProvider: s_git #github
+      gitProvider: artifactory #github
