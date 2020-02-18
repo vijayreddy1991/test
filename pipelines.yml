@@ -1,0 +1,8 @@
+resources:
+  - name: test
+    type: GitRepo
+    configuration:
+      path: vijayreddy1991/test
+      branches:
+        include: master
+      gitProvider: s_github #github
