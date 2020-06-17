@@ -13,19 +13,19 @@ resources:
   - name: r_FileSpec_pattern
     type: FileSpec
     configuration:
-      sourceArtifactory: s_artifactory
+      sourceArtifactory: vijay_artifactory
       pattern: "artifactory-build*"
 
   - name: r_FileSpec_aql
     type: FileSpec
     configuration:
-      sourceArtifactory: s_artifactory
+      sourceArtifactory: vijay_artifactory
       aql: items.find({"stat.downloads":{"$eq":null}})
 
   - name: r_FileSpec
     type: FileSpec
     configuration:
-      sourceArtifactory: s_artifactory
+      sourceArtifactory: vijay_artifactory
       aql: "docker/local"
       target: "pipelines*"
       props: <string>
