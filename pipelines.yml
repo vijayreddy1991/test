@@ -17,3 +17,4 @@ pipelines:
           onExecute:
             - echo "executing step..."    
             - sleep 30
+            - printen
