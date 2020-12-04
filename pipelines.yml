@@ -1,1 +1,19 @@
-sudo docker images
+resources:
+  - name: test
+    type: GitRepo
+    configuration:
+      path: vijayreddy1991/test
+      branches:
+        include: master
+      gitProvider: vijay #github
+      
+      
+pipelines:
+  - name: pipelines_multi_vijay
+    steps:
+      - name: Bash_FileSpec_Input
+        type: Bash
+        execution:
+          onExecute:
+            - echo "executing step..."    
+            - sleep 30
