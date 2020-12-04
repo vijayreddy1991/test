@@ -9,7 +9,7 @@ resources:
       
       
 pipelines:
-  - name: pipelines_multi_vijay
+  - name: pipelines_multi_vijaykumar
     steps:
       - name: Bash_FileSpec_Input
         type: Bash
