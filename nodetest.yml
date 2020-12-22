@@ -1,0 +1,71 @@
+
+resources:
+  - name: connecting_resource_node_test
+    type: PropertyBag
+    configuration:
+      key1: value1
+      key2: value2
+
+pipelines:
+  - name: node_test
+    steps:
+      - name: u16dynamic
+        type: Bash
+        configuration:
+          nodePool: u16dynamic
+          inputResources:
+            - name: connecting_resource_node_test
+        execution:
+          onExecute:
+            - printenv
+            - docker images
+      - name: rhel7
+        type: Bash
+        configuration:
+          nodePool: rhel7
+          inputResources:
+            - name: connecting_resource_node_test
+        execution:
+          onExecute:
+            - printenv
+            - docker images
+      - name: c7dynamic
+        type: Bash
+        configuration:
+          nodePool: centos7
+          inputResources:
+            - name: connecting_resource_node_test
+        execution:
+          onExecute:
+            - printenv
+            - docker images
+      - name: u20dynamic
+        type: Bash
+        configuration:
+          nodePool: ubuntu20
+          inputResources:
+            - name: connecting_resource_node_test
+        execution:
+          onExecute:
+            - printenv
+            - docker images
+      - name: c8dynamic
+        type: Bash
+        configuration:
+          nodePool: c8dynamic
+          inputResources:
+            - name: connecting_resource_node_test
+        execution:
+          onExecute:
+            - printenv
+            - docker images
+      - name: win_2019
+        type: PowerShell
+        configuration:
+          nodePool: win_2019
+          inputResources:
+            - name: connecting_resource_node_test
+        execution:
+          onExecute:
+            - write-output "Hi"
+            - docker images
