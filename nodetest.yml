@@ -12,7 +12,7 @@ pipelines:
       - name: u16dynamic
         type: Bash
         configuration:
-          nodePool: u16dynamic
+          nodePool: u16
           inputResources:
             - name: connecting_resource_node_test
         execution:
