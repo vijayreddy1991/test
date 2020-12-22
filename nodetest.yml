@@ -20,6 +20,7 @@ pipelines:
             - printenv
             - docker images
             - sleep 600
+            
       - name: rhel7
         type: Bash
         configuration:
