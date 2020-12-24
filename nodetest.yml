@@ -9,7 +9,7 @@ resources:
 pipelines:
   - name: node_test
     steps:
-      - name: u16dynamic
+      - name: u16
         type: Bash
         configuration:
           nodePool: u16
@@ -19,8 +19,51 @@ pipelines:
           onExecute:
             - printenv
             - docker images
-            - sleep 600
+      - name: u18
+        type: Bash
+        configuration:
+          nodePool: u18
+          inputResources:
+            - name: connecting_resource_node_test
+        execution:
+          onExecute:
+            - printenv
+            - docker images
             
+      - name: u20
+        type: Bash
+        configuration:
+          nodePool: u20
+          inputResources:
+            - name: connecting_resource_node_test
+        execution:
+          onExecute:
+            - printenv
+            - docker images            
+
+      - name: centos7
+        type: Bash
+        configuration:
+          nodePool: centos7
+          inputResources:
+            - name: connecting_resource_node_test
+        execution:
+          onExecute:
+            - printenv
+            - docker images
+
+
+      - name: centos8
+        type: Bash
+        configuration:
+          nodePool: centos8
+          inputResources:
+            - name: connecting_resource_node_test
+        execution:
+          onExecute:
+            - printenv
+            - docker images
+
       - name: rhel7
         type: Bash
         configuration:
@@ -31,47 +74,26 @@ pipelines:
           onExecute:
             - printenv
             - docker images
-            - sleep 600
-      - name: c7dynamic
+
+
+      - name: rhel8
         type: Bash
         configuration:
-          nodePool: centos7
+          nodePool: rhel8
           inputResources:
             - name: connecting_resource_node_test
         execution:
           onExecute:
             - printenv
             - docker images
-            - sleep 600
             
-      - name: u20dynamic
-        type: Bash
+      - name: win_2019
+        type: PowerShell
         configuration:
-          nodePool: ubuntu20
+          nodePool: win_2019
           inputResources:
             - name: connecting_resource_node_test
         execution:
           onExecute:
-            - printenv
+            - write-output "Hi"
             - docker images
-            - sleep 600
-#       - name: c8dynamic
-#         type: Bash
-#         configuration:
-#           nodePool: c8dynamic
-#           inputResources:
-#             - name: connecting_resource_node_test
-#         execution:
-#           onExecute:
-#             - printenv
-#             - docker images
-#       - name: win_2019
-#         type: PowerShell
-#         configuration:
-#           nodePool: win_2019
-#           inputResources:
-#             - name: connecting_resource_node_test
-#         execution:
-#           onExecute:
-#             - write-output "Hi"
-#             - docker images
